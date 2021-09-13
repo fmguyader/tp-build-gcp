@@ -1,0 +1,9 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build','-t', 'gcr.io/cellular-axon-325108/result-fm', './result']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/cellular-axon-325108/worker-fm', './worker']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/cellular-axon-325108/vote-fm', './vote']
+  
+images: ['gcr.io/cellular-axon-325108/vote-fm', 'gcr.io/cellular-axon-325108/worker-fm','gcr.io/cellular-axon-325108/result-fm']
